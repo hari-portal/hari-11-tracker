@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Class XI Study Tracker</title>
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body data-subject="physics">
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>📚 Class XI Study Tracker</h1>
+      <p>Physics · Chemistry · Mathematics — tick off Study, Revise &amp; Test as you go.</p>
+    </div>
+    <div class="tools">
+      <button class="tbtn" id="themeBtn">🌙 Dark mode</button>
+      <button class="tbtn" id="exportBtn">⬇ Export progress</button>
+      <label class="tbtn" style="cursor:pointer">⬆ Import<input type="file" id="importFile" accept="application/json" hidden></label>
+      <button class="tbtn" id="resetBtn">↺ Reset</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="summary" aria-label="Progress summary">
+    <div class="overall">
+      <div class="ring">
+        <svg width="132" height="132" viewBox="0 0 132 132">
+          <circle cx="66" cy="66" r="56" fill="none" stroke="var(--line)" stroke-width="12"/>
+          <circle id="ringArc" cx="66" cy="66" r="56" fill="none" stroke="var(--accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="351.86" stroke-dashoffset="351.86" style="transition:stroke-dashoffset .6s"/>
+        </svg>
+        <div class="num"><div><span id="ringPct">0%</span><small>Overall</small></div></div>
+      </div>
+      <div class="ostats">
+        <h2>All subjects</h2>
+        <div class="pill"><span class="dot" style="background:var(--study)"></span>Studied <b id="oS"></b></div>
+        <div class="pill"><span class="dot" style="background:var(--revise)"></span>Revised <b id="oR"></b></div>
+        <div class="pill"><span class="dot" style="background:var(--test)"></span>Tested <b id="oT"></b></div>
+        <div class="pill"><span class="dot" style="background:var(--muted)"></span>Infographics <b id="oI"></b></div>
+      </div>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <nav class="tabs" id="tabs" role="tablist"></nav>
+  <div id="panel"></div>
+</main>
+
+<div class="lb" id="lb"><button class="close" aria-label="Close">×</button><img alt=""><p></p></div>
+<div class="toast" id="toast"></div>
+
+<script src="data/syllabus.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
